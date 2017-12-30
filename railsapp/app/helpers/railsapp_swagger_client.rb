@@ -1,5 +1,21 @@
 require 'singleton'
 require 'swagger_client'
+require '/workspace/swagger_api/lib/swagger_client/api/userjwtcontroller_api'
+require '/workspace/swagger_api/lib/swagger_client/api/profileinforesource_api'
+require '/workspace/swagger_api/lib/swagger_client/api/projectsresource_api'
+
+# Models
+require '/workspace/swagger_api/lib/swagger_client/models/login_vm'
+require '/workspace/swagger_api/lib/swagger_client/models/jwt_token'
+require '/workspace/swagger_api/lib/swagger_client/models/user'
+require '/workspace/swagger_api/lib/swagger_client/models/projects'
+
+
+# Common files
+require '/workspace/swagger_api/lib/swagger_client/api_client'
+require '/workspace/swagger_api/lib/swagger_client/api_error'
+require '/workspace/swagger_api/lib/swagger_client/version'
+require '/workspace/swagger_api/lib/swagger_client/configuration'
 
 class RailsappSwaggerClient
   include Singleton
@@ -11,7 +27,7 @@ class RailsappSwaggerClient
   		@authorization = ''
 		SwaggerClient.configure do |c|
 			c.scheme  = 'http'
-    		c.host = 'dockercompose_hrappgateway-app_1:8080'
+    		c.host = 'dockercompose_gateway_timesheets-app_1:8080'
       		c.base_path = ''
     	end
 
@@ -68,14 +84,16 @@ class RailsappSwaggerClient
 private
 
   def authorize
+    #binding.pry
 		api_instance = SwaggerClient::UserjwtcontrollerApi.new
 		login_vm = SwaggerClient::LoginVM.new password: 'admin' , rememberMe: true, username: 'admin' # LoginVM | loginVM
 		
 		begin
 		  #authorize
 		  result, header = api_instance.authorize_using_post(login_vm)
-		  @authorization = header["Authorization"]
-		  @authorized  = true
+		  #@authorization = header["Authorization"]
+      @authorization= "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUxNzIwNzgxMn0.FdGRX8MsXV3q8QJXY2Garc7m5ebIZsWweRjTHeyveHyV4UoqXIMxDRw9UBOpG0CFrVA27U9Wn81l1mMfSjuPMg";
+          @authorized  = true
 
 		rescue SwaggerClient::ApiError => e
 		  puts "Exception when calling UserjwtcontrollerApi->authorize_using_post: #{e}"

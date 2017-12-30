@@ -1,3 +1,3 @@
 #class Project < ApplicationRecord
-class Project < ProjectResource
+class Projects < ProjectsResource
 end
