@@ -1,11 +1,13 @@
 require 'singleton'
 require 'swagger_client'
-require '/workspace/swagger_api/lib/swagger_client/api/userjwtcontroller_api'
-require '/workspace/swagger_api/lib/swagger_client/api/profileinforesource_api'
-require '/workspace/swagger_api/lib/swagger_client/api/projectsresource_api'
-require '/workspace/swagger_api/lib/swagger_client/api/accountresource_api'
-require '/workspace/swagger_api/lib/swagger_client/api/gatewayresource_api'
-require '/workspace/swagger_api/lib/swagger_client/api/userresource_api'
+require 'uri'
+
+# Common files
+require '/workspace/swagger_api/lib/swagger_client/api_client'
+require '/workspace/swagger_api/lib/swagger_client/api_error'
+require '/workspace/swagger_api/lib/swagger_client/version'
+require '/workspace/swagger_api/lib/swagger_client/configuration'
+
 
 # Models
 require '/workspace/swagger_api/lib/swagger_client/models/login_vm'
@@ -17,15 +19,20 @@ require '/workspace/swagger_api/lib/swagger_client/models/managed_user_vm'
 require '/workspace/swagger_api/lib/swagger_client/models/profile_info_vm'
 require '/workspace/swagger_api/lib/swagger_client/models/route_vm'
 require '/workspace/swagger_api/lib/swagger_client/models/service_instance'
-require '/workspace/swagger_api/lib/swagger_client/models/uri'
+#require '/workspace/swagger_api/lib/swagger_client/models/uri'
 require '/workspace/swagger_api/lib/swagger_client/models/user_dto'
 
 
-# Common files
-require '/workspace/swagger_api/lib/swagger_client/api_client'
-require '/workspace/swagger_api/lib/swagger_client/api_error'
-require '/workspace/swagger_api/lib/swagger_client/version'
-require '/workspace/swagger_api/lib/swagger_client/configuration'
+#API'S
+require '/workspace/swagger_api/lib/swagger_client/api/userjwtcontroller_api'
+require '/workspace/swagger_api/lib/swagger_client/api/profileinforesource_api'
+require '/workspace/swagger_api/lib/swagger_client/api/projectsresource_api'
+require '/workspace/swagger_api/lib/swagger_client/api/accountresource_api'
+require '/workspace/swagger_api/lib/swagger_client/api/gatewayresource_api'
+require '/workspace/swagger_api/lib/swagger_client/api/userresource_api'
+
+
+
 
 class RailsappSwaggerClient
   include Singleton
@@ -91,6 +98,7 @@ class RailsappSwaggerClient
     end
  end
 
+
 private
 
   def authorize
@@ -102,7 +110,7 @@ private
 		  #authorize
 		  result, header = api_instance.authorize_using_post(login_vm)
 		  @authorization = header["Authorization"]
-      #@authorization= "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUxNzIwNzgxMn0.FdGRX8MsXV3q8QJXY2Garc7m5ebIZsWweRjTHeyveHyV4UoqXIMxDRw9UBOpG0CFrVA27U9Wn81l1mMfSjuPMg";
+      #@authorization= "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUxNzUxNTY0Mn0.s29nK9m8_UGTkbVy-ag_N_64tebOBq5ykNeQhtllFxnpexli269v9qUPxSoc1Ofm_w9PLkJKQu56R9z0Q3TFmA";
       @authorized  = true
 
 		rescue SwaggerClient::ApiError => e

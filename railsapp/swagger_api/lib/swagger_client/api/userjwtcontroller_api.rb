@@ -27,7 +27,8 @@ module SwaggerClient
     # @return [JWTToken]
     def authorize_using_post(login_vm, opts = {})
       data, _status_code, _headers = authorize_using_post_with_http_info(login_vm, opts)
-      return data
+      #byebug
+      return data, _headers
     end
 
     # authorize
