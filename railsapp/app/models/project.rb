@@ -1,0 +1,2 @@
+class Project < ProjectResource
+end

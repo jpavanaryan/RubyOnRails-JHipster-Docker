@@ -1,15 +1,10 @@
-# Load the gem
-require 'swagger_client'
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    #@projects = Project.all
-    #api_instance=SwaggerClient::ProjectsresourceApi.new
-    #result = api_instance.get_projects_using_get(0)
-    @projects =Projects.all
+    @projects = Project.all
   end
 
   # GET /projects/1
@@ -19,7 +14,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Projects.new
+    @project = Project.new
   end
 
   # GET /projects/1/edit
@@ -29,7 +24,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Projects.new(project_params)
+    @project = Project.new(project_params)
 
     respond_to do |format|
       if @project.save
@@ -69,11 +64,11 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Projects.find(params[:id])
+      @project = Project.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:projectname, :projectlocation)
+      params.require(:project).permit(:name, :location)
     end
 end

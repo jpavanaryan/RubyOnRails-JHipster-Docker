@@ -21,14 +21,14 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "enableSwaggerCodegen": false,
-    "jwtSecretKey": "07fbb9e5b72e80ed7d32c99ad5d6399200db4d3a",
-    "clientFramework": "angularX",
-    "useSass": true,
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "437d8dfc96580d93a9b8bdb910fcdf7b9b3db42d",
+    "clientFramework": "angular1",
+    "useSass": false,
     "clientPackageManager": "yarn",
     "applicationType": "gateway",
     "testFrameworks": [
-      "cucumber"
+      "gatling"
     ],
     "jhiPrefix": "jhi",
     "enableTranslation": false

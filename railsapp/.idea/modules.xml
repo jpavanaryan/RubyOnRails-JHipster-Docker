@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/railsapp.iml" filepath="$PROJECT_DIR$/.idea/railsapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swagger_api.iml" filepath="$PROJECT_DIR$/.idea/modules/swagger_api.iml" />
     </modules>
   </component>
 </project>
