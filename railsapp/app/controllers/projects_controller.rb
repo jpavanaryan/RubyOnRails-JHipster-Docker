@@ -51,6 +51,15 @@ class ProjectsController < ApplicationController
     end
   end
 
+
+
+  # PATCH/PUT /projects/1
+  # PATCH/PUT /projects/1.json
+  def update_attributes(project_params)
+    load(project_params, false) && save
+  end
+
+
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
