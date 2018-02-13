@@ -220,7 +220,7 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.5)
   nokogiri
   pry
-  puma (~> 3.7)
+  puma (~> 3.11.0)
   rack (~> 2.0.1)
   rails (~> 5.1.4)
   rspec
