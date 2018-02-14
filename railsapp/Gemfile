@@ -41,15 +41,19 @@ gem 'rack', '~> 2.0.1'
 gem 'rspec'
 
 
+
+
 #Custom gems
+
+gem 'json', '~> 1.8', '>= 1.8.3'
+
 gem 'activesupport', '~> 5.0', '>= 5.0.6'
 
 gem 'activeresource', require: 'active_resource'
 
 gem 'swagger_client', '~> 1.0.0'
 
-gem 'json', '~> 1.8.3'
-
+#gem 'json', '~> 2.1.0'
 #gem "swagger_client", path: "/swagger/"
 
 

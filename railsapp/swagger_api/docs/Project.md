@@ -1,10 +1,10 @@
-# SwaggerClient::Projects
+# SwaggerClient::Project
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** |  | [optional] 
-**location** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
+**location** | **String** |  | 
+**name** | **String** |  | 
 
 

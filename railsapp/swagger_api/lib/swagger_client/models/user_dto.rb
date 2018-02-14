@@ -200,8 +200,8 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'login', the character length must be great than or equal to 1.")
       end
 
-      if @login !~ Regexp.new(/^[_'.A-Za-z0-9-]*$/)
-        invalid_properties.push("invalid value for 'login', must conform to the pattern /^[_'.A-Za-z0-9-]*$/.")
+      if @login !~ Regexp.new(/^[_'.@A-Za-z0-9-]*$/)
+        invalid_properties.push("invalid value for 'login', must conform to the pattern /^[_'.@A-Za-z0-9-]*$/.")
       end
 
       return invalid_properties
@@ -223,7 +223,7 @@ module SwaggerClient
       return false if @login.nil?
       return false if @login.to_s.length > 50
       return false if @login.to_s.length < 1
-      return false if @login !~ Regexp.new(/^[_'.A-Za-z0-9-]*$/)
+      return false if @login !~ Regexp.new(/^[_'.@A-Za-z0-9-]*$/)
       return true
     end
 
@@ -317,8 +317,8 @@ module SwaggerClient
         fail ArgumentError, "invalid value for 'login', the character length must be great than or equal to 1."
       end
 
-      if login !~ Regexp.new(/^[_'.A-Za-z0-9-]*$/)
-        fail ArgumentError, "invalid value for 'login', must conform to the pattern /^[_'.A-Za-z0-9-]*$/."
+      if login !~ Regexp.new(/^[_'.@A-Za-z0-9-]*$/)
+        fail ArgumentError, "invalid value for 'login', must conform to the pattern /^[_'.@A-Za-z0-9-]*$/."
       end
 
       @login = login

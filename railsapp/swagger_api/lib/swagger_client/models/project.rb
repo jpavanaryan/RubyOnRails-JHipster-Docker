@@ -14,7 +14,7 @@ require 'date'
 
 module SwaggerClient
 
-  class Projects
+  class Project
     attr_accessor :id
 
     attr_accessor :location
@@ -66,12 +66,22 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @location.nil?
+        invalid_properties.push("invalid value for 'location', location cannot be nil.")
+      end
+
+      if @name.nil?
+        invalid_properties.push("invalid value for 'name', name cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @location.nil?
+      return false if @name.nil?
       return true
     end
 

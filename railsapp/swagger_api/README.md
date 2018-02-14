@@ -73,17 +73,17 @@ All URIs are relative to *https://localhost:8080/timesheets*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SwaggerClient::ProfileinforesourceApi* | [**get_active_profiles_using_get**](docs/ProfileinforesourceApi.md#get_active_profiles_using_get) | **GET** /api/profile-info | getActiveProfiles
-*SwaggerClient::ProjectsresourceApi* | [**create_projects_using_post**](docs/ProjectsresourceApi.md#create_projects_using_post) | **POST** /api/projects | createProjects
-*SwaggerClient::ProjectsresourceApi* | [**delete_projects_using_delete**](docs/ProjectsresourceApi.md#delete_projects_using_delete) | **DELETE** /api/projects/{id} | deleteProjects
-*SwaggerClient::ProjectsresourceApi* | [**get_all_projects_using_get**](docs/ProjectsresourceApi.md#get_all_projects_using_get) | **GET** /api/projects | getAllProjects
-*SwaggerClient::ProjectsresourceApi* | [**get_projects_using_get**](docs/ProjectsresourceApi.md#get_projects_using_get) | **GET** /api/projects/{id} | getProjects
-*SwaggerClient::ProjectsresourceApi* | [**update_projects_using_put**](docs/ProjectsresourceApi.md#update_projects_using_put) | **PUT** /api/projects | updateProjects
+*SwaggerClient::ProjectresourceApi* | [**create_project_using_post**](docs/ProjectresourceApi.md#create_project_using_post) | **POST** /api/projects | createProject
+*SwaggerClient::ProjectresourceApi* | [**delete_project_using_delete**](docs/ProjectresourceApi.md#delete_project_using_delete) | **DELETE** /api/projects/{id} | deleteProject
+*SwaggerClient::ProjectresourceApi* | [**get_all_projects_using_get**](docs/ProjectresourceApi.md#get_all_projects_using_get) | **GET** /api/projects | getAllProjects
+*SwaggerClient::ProjectresourceApi* | [**get_project_using_get**](docs/ProjectresourceApi.md#get_project_using_get) | **GET** /api/projects/{id} | getProject
+*SwaggerClient::ProjectresourceApi* | [**update_project_using_put**](docs/ProjectresourceApi.md#update_project_using_put) | **PUT** /api/projects | updateProject
 
 
 ## Documentation for Models
 
  - [SwaggerClient::ProfileInfoVM](docs/ProfileInfoVM.md)
- - [SwaggerClient::Projects](docs/Projects.md)
+ - [SwaggerClient::Project](docs/Project.md)
 
 
 ## Documentation for Authorization

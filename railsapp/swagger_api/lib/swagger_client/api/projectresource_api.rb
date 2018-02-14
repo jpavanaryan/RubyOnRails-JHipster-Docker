@@ -13,35 +13,35 @@ Swagger Codegen version: 2.2.3
 require "uri"
 
 module SwaggerClient
-  class ProjectsresourceApi
+  class ProjectresourceApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
 
-    # createProjects
+    # createProject
     # 
-    # @param projects projects
+    # @param project project
     # @param [Hash] opts the optional parameters
-    # @return [Projects]
-    def create_projects_using_post(projects, opts = {})
-      data, _status_code, _headers = create_projects_using_post_with_http_info(projects, opts)
+    # @return [Project]
+    def create_project_using_post(project, opts = {})
+      data, _status_code, _headers = create_project_using_post_with_http_info(project, opts)
       return data
     end
 
-    # createProjects
+    # createProject
     # 
-    # @param projects projects
+    # @param project project
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Projects, Fixnum, Hash)>] Projects data, response status code and response headers
-    def create_projects_using_post_with_http_info(projects, opts = {})
+    # @return [Array<(Project, Fixnum, Hash)>] Project data, response status code and response headers
+    def create_project_using_post_with_http_info(project, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ProjectsresourceApi.create_projects_using_post ..."
+        @api_client.config.logger.debug "Calling API: ProjectresourceApi.create_project_using_post ..."
       end
-      # verify the required parameter 'projects' is set
-      if @api_client.config.client_side_validation && projects.nil?
-        fail ArgumentError, "Missing the required parameter 'projects' when calling ProjectsresourceApi.create_projects_using_post"
+      # verify the required parameter 'project' is set
+      if @api_client.config.client_side_validation && project.nil?
+        fail ArgumentError, "Missing the required parameter 'project' when calling ProjectresourceApi.create_project_using_post"
       end
       # resource path
       local_var_path = "/api/projects"
@@ -60,7 +60,7 @@ module SwaggerClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(projects)
+      post_body = @api_client.object_to_http_body(project)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -68,35 +68,35 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Projects')
+        :return_type => 'Project')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsresourceApi#create_projects_using_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectresourceApi#create_project_using_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # deleteProjects
+    # deleteProject
     # 
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def delete_projects_using_delete(id, opts = {})
-      delete_projects_using_delete_with_http_info(id, opts)
+    def delete_project_using_delete(id, opts = {})
+      delete_project_using_delete_with_http_info(id, opts)
       return nil
     end
 
-    # deleteProjects
+    # deleteProject
     # 
     # @param id id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
-    def delete_projects_using_delete_with_http_info(id, opts = {})
+    def delete_project_using_delete_with_http_info(id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ProjectsresourceApi.delete_projects_using_delete ..."
+        @api_client.config.logger.debug "Calling API: ProjectresourceApi.delete_project_using_delete ..."
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling ProjectsresourceApi.delete_projects_using_delete"
+        fail ArgumentError, "Missing the required parameter 'id' when calling ProjectresourceApi.delete_project_using_delete"
       end
       # resource path
       local_var_path = "/api/projects/{id}".sub('{' + 'id' + '}', id.to_s)
@@ -108,8 +108,6 @@ module SwaggerClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -124,7 +122,7 @@ module SwaggerClient
         :body => post_body,
         :auth_names => auth_names)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsresourceApi#delete_projects_using_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectresourceApi#delete_project_using_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -132,7 +130,10 @@ module SwaggerClient
     # getAllProjects
     # 
     # @param [Hash] opts the optional parameters
-    # @return [Array<Projects>]
+    # @option opts [Integer] :page Page number of the requested page
+    # @option opts [Integer] :size Size of a page
+    # @option opts [Array<String>] :sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
+    # @return [Array<Project>]
     def get_all_projects_using_get(opts = {})
       data, _status_code, _headers = get_all_projects_using_get_with_http_info(opts)
       return data
@@ -141,23 +142,27 @@ module SwaggerClient
     # getAllProjects
     # 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<Projects>, Fixnum, Hash)>] Array<Projects> data, response status code and response headers
+    # @option opts [Integer] :page Page number of the requested page
+    # @option opts [Integer] :size Size of a page
+    # @option opts [Array<String>] :sort Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.
+    # @return [Array<(Array<Project>, Fixnum, Hash)>] Array<Project> data, response status code and response headers
     def get_all_projects_using_get_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ProjectsresourceApi.get_all_projects_using_get ..."
+        @api_client.config.logger.debug "Calling API: ProjectresourceApi.get_all_projects_using_get ..."
       end
       # resource path
       local_var_path = "/api/projects"
 
       # query parameters
       query_params = {}
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'sort'] = @api_client.build_collection_param(opts[:'sort'], :multi) if !opts[:'sort'].nil?
 
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -171,35 +176,35 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Projects>')
+        :return_type => 'Array<Project>')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsresourceApi#get_all_projects_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectresourceApi#get_all_projects_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # getProjects
+    # getProject
     # 
     # @param id id
     # @param [Hash] opts the optional parameters
-    # @return [Projects]
-    def get_projects_using_get(id, opts = {})
-      data, _status_code, _headers = get_projects_using_get_with_http_info(id, opts)
+    # @return [Project]
+    def get_project_using_get(id, opts = {})
+      data, _status_code, _headers = get_project_using_get_with_http_info(id, opts)
       return data
     end
 
-    # getProjects
+    # getProject
     # 
     # @param id id
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Projects, Fixnum, Hash)>] Projects data, response status code and response headers
-    def get_projects_using_get_with_http_info(id, opts = {})
+    # @return [Array<(Project, Fixnum, Hash)>] Project data, response status code and response headers
+    def get_project_using_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ProjectsresourceApi.get_projects_using_get ..."
+        @api_client.config.logger.debug "Calling API: ProjectresourceApi.get_project_using_get ..."
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling ProjectsresourceApi.get_projects_using_get"
+        fail ArgumentError, "Missing the required parameter 'id' when calling ProjectresourceApi.get_project_using_get"
       end
       # resource path
       local_var_path = "/api/projects/{id}".sub('{' + 'id' + '}', id.to_s)
@@ -211,8 +216,6 @@ module SwaggerClient
       header_params = {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = {}
@@ -226,35 +229,35 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Projects')
+        :return_type => 'Project')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsresourceApi#get_projects_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectresourceApi#get_project_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # updateProjects
+    # updateProject
     # 
-    # @param projects projects
+    # @param project project
     # @param [Hash] opts the optional parameters
-    # @return [Projects]
-    def update_projects_using_put(projects, opts = {})
-      data, _status_code, _headers = update_projects_using_put_with_http_info(projects, opts)
+    # @return [Project]
+    def update_project_using_put(project, opts = {})
+      data, _status_code, _headers = update_project_using_put_with_http_info(project, opts)
       return data
     end
 
-    # updateProjects
+    # updateProject
     # 
-    # @param projects projects
+    # @param project project
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Projects, Fixnum, Hash)>] Projects data, response status code and response headers
-    def update_projects_using_put_with_http_info(projects, opts = {})
+    # @return [Array<(Project, Fixnum, Hash)>] Project data, response status code and response headers
+    def update_project_using_put_with_http_info(project, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: ProjectsresourceApi.update_projects_using_put ..."
+        @api_client.config.logger.debug "Calling API: ProjectresourceApi.update_project_using_put ..."
       end
-      # verify the required parameter 'projects' is set
-      if @api_client.config.client_side_validation && projects.nil?
-        fail ArgumentError, "Missing the required parameter 'projects' when calling ProjectsresourceApi.update_projects_using_put"
+      # verify the required parameter 'project' is set
+      if @api_client.config.client_side_validation && project.nil?
+        fail ArgumentError, "Missing the required parameter 'project' when calling ProjectresourceApi.update_project_using_put"
       end
       # resource path
       local_var_path = "/api/projects"
@@ -273,7 +276,7 @@ module SwaggerClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(projects)
+      post_body = @api_client.object_to_http_body(project)
       auth_names = []
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
@@ -281,9 +284,9 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Projects')
+        :return_type => 'Project')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsresourceApi#update_projects_using_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectresourceApi#update_project_using_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

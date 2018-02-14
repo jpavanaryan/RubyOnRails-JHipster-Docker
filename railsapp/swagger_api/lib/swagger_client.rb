@@ -17,27 +17,12 @@ require 'swagger_client/version'
 require 'swagger_client/configuration'
 
 # Models
-require 'swagger_client/models/login_vm'
-require 'swagger_client/models/jwt_token'
-require 'swagger_client/models/user'
-require 'swagger_client/models/projects'
-require 'swagger_client/models/key_and_password_vm'
-require 'swagger_client/models/managed_user_vm'
 require 'swagger_client/models/profile_info_vm'
-require 'swagger_client/models/route_vm'
-require 'swagger_client/models/service_instance'
-require 'swagger_client/models/uri'
-require 'swagger_client/models/user_dto'
+require 'swagger_client/models/project'
 
 # APIs
 require 'swagger_client/api/profileinforesource_api'
-require 'swagger_client/api/projectsresource_api'
-require 'swagger_client/api/userjwtcontroller_api'
-require 'swagger_client/api/accountresource_api'
-require 'swagger_client/api/gatewayresource_api'
-require 'swagger_client/api/userresource_api'
-
-
+require 'swagger_client/api/projectresource_api'
 
 module SwaggerClient
   class << self
