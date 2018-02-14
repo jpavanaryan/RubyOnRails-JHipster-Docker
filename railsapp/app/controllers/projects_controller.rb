@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-    byebug
+    #byebug
     @project.save
     #"id": 0,"location": "VA","name": "Flare"
     #@project = Project.new(project_params)
