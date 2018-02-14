@@ -17,4 +17,3 @@ Launch all your infrastructure by running: `docker-compose up -d`.
 
 ### Additional Services:
 
-- [JHipster Console](http://localhost:5601)

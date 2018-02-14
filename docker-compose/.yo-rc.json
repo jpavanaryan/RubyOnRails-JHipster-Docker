@@ -6,10 +6,9 @@
     ],
     "directoryPath": "../",
     "gatewayType": "zuul",
-    "monitoring": "elk",
-    "consoleOptions": [],
+    "monitoring": "no",
     "serviceDiscoveryType": "eureka",
     "adminPassword": "admin",
-    "jwtSecretKey": "98812a50006f92c4aa016832afdff258a5caf2ab"
+    "jwtSecretKey": "4fc44c4324d6e4c5cc49d6b81f6cb703cc283304"
   }
 }
