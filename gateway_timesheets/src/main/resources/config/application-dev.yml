@@ -16,7 +16,7 @@
 logging:
     level:
         ROOT: DEBUG
-        com.timesheetsgateway: DEBUG
+        com.gatewaytimesheets: DEBUG
         io.github.jhipster: DEBUG
 
 eureka:

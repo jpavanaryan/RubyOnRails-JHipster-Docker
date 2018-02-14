@@ -1,5 +1,5 @@
 # timesheets
-This application was generated using JHipster 4.13.1, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.13.1](http://www.jhipster.tech/documentation-archive/v4.13.1).
+This application was generated using JHipster 4.14.0, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.14.0](http://www.jhipster.tech/documentation-archive/v4.14.0).
 
 This is a "microservice" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
 
@@ -15,17 +15,6 @@ To start your application in the dev profile, simply run:
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
 
-### Doing API-First development using swagger-codegen
-
-[Swagger-Codegen]() is configured for this application. You can generate API code from the `src/main/resources/swagger/api.yml` definition file by running:
-```bash
-./mvnw generate-sources
-```
-Then implements the generated interfaces with `@RestController` classes.
-
-To edit the `api.yml` definition file, you can use a tool such as [Swagger-Editor](). Start a local instance of the swagger-editor using docker by running: `docker-compose -f src/main/docker/swagger-editor.yml up -d`. The editor will then be reachable at [http://localhost:7742](http://localhost:7742).
-
-Refer to [Doing API-First development][] for more details.
 
 ## Building for production
 
@@ -76,16 +65,13 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
 [JHipster Homepage and latest documentation]: http://www.jhipster.tech
-[JHipster 4.13.1 archive]: http://www.jhipster.tech/documentation-archive/v4.13.1
-[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.13.1/microservices-architecture/
-[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.13.1/development/
-[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.13.1/microservices-architecture/#jhipster-registry
-[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.13.1/docker-compose
-[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.13.1/production/
-[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.13.1/running-tests/
-[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.13.1/setting-up-ci/
+[JHipster 4.14.0 archive]: http://www.jhipster.tech/documentation-archive/v4.14.0
+[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.14.0/microservices-architecture/
+[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.14.0/development/
+[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.14.0/microservices-architecture/#jhipster-registry
+[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.14.0/docker-compose
+[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.14.0/production/
+[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.14.0/running-tests/
+[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.14.0/setting-up-ci/
 
 
-[Swagger-Codegen]: https://github.com/swagger-api/swagger-codegen
-[Swagger-Editor]: http://editor.swagger.io
-[Doing API-First development]: http://www.jhipster.tech/documentation-archive/v4.13.1/doing-api-first-development/

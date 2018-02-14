@@ -1,0 +1,15 @@
+
+
+entity Project 
+{
+	name String	required,
+    location String	required,
+}
+
+
+microservice * with timesheets
+
+
+paginate Project with pagination
+
+
