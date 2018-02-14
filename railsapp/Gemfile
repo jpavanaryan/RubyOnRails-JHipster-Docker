@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 4.2.10'
 # Use sqlite3 as the database for Active Record
 
 # Use mysql as the database for Active Record
@@ -37,12 +37,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'minitest', '~>5.11.1'
 gem 'nokogiri'
-gem 'rack', '~> 2.0.1'
+gem 'rack', '~> 1.6'
 gem 'rspec'
 
 
 #Custom gems
-gem 'activesupport', '~> 5.0', '>= 5.0.6'
+gem 'activesupport', '~> 4.2.10'
 
 gem 'activeresource', require: 'active_resource'
 
