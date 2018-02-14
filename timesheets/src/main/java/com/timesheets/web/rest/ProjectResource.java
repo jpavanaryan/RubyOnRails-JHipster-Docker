@@ -70,9 +70,9 @@ public class ProjectResource {
      * or with status 500 (Internal Server Error) if the project couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PutMapping("/projects")
+    @PutMapping("/projects/{id}")
     @Timed
-    public ResponseEntity<Project> updateProject(@Valid @RequestBody Project project) throws URISyntaxException {
+    public ResponseEntity<Project> updateProject(@Valid @RequestBody Project project, @PathVariable Long id) throws URISyntaxException {
         log.debug("REST request to update Project : {}", project);
         if (project.getId() == null) {
             return createProject(project);
