@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 
 # Use mysql as the database for Active Record
@@ -42,6 +42,8 @@ gem 'rspec'
 
 
 #Custom gems
+gem 'activesupport', '~> 5.0', '>= 5.0.6'
+
 gem 'activeresource', require: 'active_resource'
 
 gem 'swagger_client', '~> 1.0.0'
