@@ -41,10 +41,15 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     #byebug
-    @project.save
-    #"id": 0,"location": "VA","name": "Flare"
-    #@project = Project.new(project_params)
-    #@project.save
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.json { render :show, status: :created, location: @project }
+      else
+        format.html { render :new }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
 
