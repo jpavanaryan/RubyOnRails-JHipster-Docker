@@ -1,0 +1,11 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "gateway_timesheets/package.json",
+        "railsapp/package.json",
+        "timesheets/package.json"
+      ]
+    }
+  }
+}
